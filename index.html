@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#C8402F">
+<title>紅瓦厝國小一年一班</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23DCEFFA'/%3E%3Cpath d='M8 30 L32 12 L56 30Z' fill='%23C8402F' stroke='%236B3426' stroke-width='3' stroke-linejoin='round'/%3E%3Crect x='14' y='30' width='36' height='24' fill='%23FFF6E8' stroke='%236B3426' stroke-width='3'/%3E%3Crect x='27' y='38' width='10' height='16' fill='%23B5793F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tile:#C8402F; --tile-deep:#962E22; --tile-press:#A8382A;
+    --ink:#24324B; --ink-soft:#56627A; --line:#D9E2EC;
+    --paper:#FFFFFF; --grid-bg:#F2F8F3; --grid-line:#DCEEE0;
+    --sky:#DCEFFA; --sun:#FFC93C;
+    --basic:#9A6700; --basic-bg:#FFF4CC; --basic-line:#F1D27E;
+    --google:#2259B8; --google-bg:#E5EEFD; --google-line:#B9D0F6;
+    --openid:#17774A; --openid-bg:#DEF4E8; --openid-line:#AEDDC3;
+    --hyread:#6B3FB8; --hyread-bg:#EFE7FB; --hyread-line:#D2C0F1;
+    --danger:#B42318; --danger-bg:#FDECEA;
+    --font:"Nunito","Huninn","PingFang TC","Heiti TC","Microsoft JhengHei","Noto Sans TC",sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{
+    margin:0; color:var(--ink); font-family:var(--font); font-weight:600;
+    font-size:18px; line-height:1.65; font-synthesis-weight:none;
+    background-color:var(--grid-bg);
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size:28px 28px; background-position:-1px -1px;
+  }
+  .wrap{max-width:540px; margin:0 auto; padding:16px 16px calc(40px + env(safe-area-inset-bottom))}
+
+  /* ---------- 頁首 ---------- */
+  .hero{margin:0 0 20px}
+  .hero-art{display:block; width:100%; height:auto; border-radius:28px; background:var(--sky);
+    box-shadow:0 0 0 3px #6B3426, 0 6px 0 3px #6B3426}
+  .hero h1{margin:22px 0 0; text-align:center; font-weight:400; line-height:1.2}
+  .hero .school{display:block; font-size:24px; color:var(--tile-deep); letter-spacing:.12em}
+  .hero .klass{display:block; font-size:46px; letter-spacing:.14em; margin-top:4px}
+  .hero .year{display:block; margin-top:8px; text-align:center; font-size:16px; color:var(--ink-soft)}
+
+  /* ---------- 置頂卡片 ---------- */
+  .pinned{background:var(--paper); border:3px solid var(--tile-deep); border-radius:24px;
+    box-shadow:0 6px 0 var(--tile-deep); overflow:hidden}
+  .pinned-head{background:var(--tile); color:#fff; padding:16px 20px 18px; position:relative}
+  .pin-badge{display:inline-flex; align-items:center; gap:6px; font-size:15px; line-height:1;
+    padding:6px 12px 6px 9px; border-radius:999px; background:#fff; color:var(--tile-deep)}
+  .pin-badge svg{width:16px; height:16px}
+  .pinned-head h2{margin:10px 0 0; font-weight:400; font-size:30px; line-height:1.3; letter-spacing:.06em}
+  .pinned-body{padding:18px 20px 22px}
+  .lead{margin:0 0 18px; color:var(--ink-soft); font-size:17px}
+
+  .field{margin-bottom:18px}
+  .field label{display:block; font-size:19px; margin-bottom:8px}
+  .hint{display:block; margin-top:6px; font-size:15px; color:var(--ink-soft)}
+  .control{width:100%; min-height:60px; border:2.5px solid var(--line); border-radius:16px;
+    background:#fff; color:var(--ink); font-family:var(--font); font-weight:800; font-size:22px;
+    padding:12px 16px; outline:none; -webkit-appearance:none; appearance:none}
+  .control:focus-visible,.control:focus{border-color:var(--tile); box-shadow:0 0 0 4px rgba(200,64,47,.18)}
+  select.control{padding-right:52px; cursor:pointer;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2324324B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 16px center; background-size:22px}
+  select.control:invalid{color:#8A94A6}
+  input.control{letter-spacing:.1em; text-transform:uppercase}
+  input.control::placeholder{color:#A7B0BF; letter-spacing:.06em}
+
+  .btn{display:flex; align-items:center; justify-content:center; gap:10px; width:100%; min-height:60px;
+    border:0; border-radius:18px; font-family:var(--font); font-size:22px; font-weight:600; cursor:pointer;
+    -webkit-tap-highlight-color:transparent}
+  .btn-main{background:var(--tile); color:#fff; box-shadow:0 5px 0 var(--tile-deep); margin-top:6px}
+  .btn-main:active{transform:translateY(3px); box-shadow:0 2px 0 var(--tile-deep)}
+  .btn-main[disabled]{opacity:.75; cursor:progress}
+  .btn:focus-visible{outline:4px solid var(--sun); outline-offset:3px}
+  .spinner{width:22px; height:22px; border-radius:50%; border:3px solid rgba(255,255,255,.4);
+    border-top-color:#fff; animation:spin .8s linear infinite; display:none}
+  .btn-main[disabled] .spinner{display:inline-block}
+
+  .msg{margin:14px 0 0; padding:12px 14px; border-radius:14px; font-size:17px; display:none}
+  .msg.show{display:block}
+  .msg.error{background:var(--danger-bg); color:var(--danger)}
+
+  /* ---------- 結果 ---------- */
+  .result{margin-top:22px; scroll-margin-top:12px; outline:none}
+  .result[hidden]{display:none}
+  .who{display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 4px 12px}
+  .who p{margin:0; font-size:17px; color:var(--ink-soft)}
+
+  .block{border-radius:20px; border:2.5px solid; margin-bottom:14px; overflow:hidden; background:#fff}
+  .block-head{display:flex; align-items:center; gap:10px; padding:12px 16px; font-size:20px; line-height:1.3}
+  .dot{width:14px; height:14px; border-radius:50%; flex:none}
+  .block-body{padding:4px 16px 8px}
+
+  .b-basic{border-color:var(--basic-line)} .b-basic .block-head{background:var(--basic-bg); color:var(--basic)} .b-basic .dot{background:var(--basic)}
+  .b-google{border-color:var(--google-line)} .b-google .block-head{background:var(--google-bg); color:var(--google)} .b-google .dot{background:var(--google)}
+  .b-openid{border-color:var(--openid-line)} .b-openid .block-head{background:var(--openid-bg); color:var(--openid)} .b-openid .dot{background:var(--openid)}
+  .b-hyread{border-color:var(--hyread-line)} .b-hyread .block-head{background:var(--hyread-bg); color:var(--hyread)} .b-hyread .dot{background:var(--hyread)}
+
+  .basic-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 16px}
+  .basic-grid .item{padding:10px 0}
+  .basic-grid .item.full{grid-column:1 / -1; border-bottom:1.5px dashed var(--basic-line)}
+  .k{display:block; font-size:16px; color:var(--ink-soft); line-height:1.4}
+  .v{display:block; font-size:24px; font-weight:800; line-height:1.35; color:var(--ink)}
+  .v.name{font-weight:400; font-size:28px; letter-spacing:.08em}
+
+  .row{padding:12px 0}
+  .row + .row{border-top:1.5px dashed var(--line)}
+  .row-top{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:4px}
+  .cred{font-size:23px; font-weight:800; letter-spacing:.03em; line-height:1.35;
+    overflow-wrap:anywhere; -webkit-user-select:all; user-select:all; color:var(--ink)}
+
+  .copy{display:inline-flex; align-items:center; gap:6px; min-height:44px; min-width:92px; justify-content:center;
+    padding:0 14px; border-radius:999px; border:2px solid currentColor; background:#fff;
+    font-family:var(--font); font-size:17px; font-weight:600; cursor:pointer; -webkit-tap-highlight-color:transparent}
+  .copy svg{width:18px; height:18px; flex:none}
+  .copy:active{transform:scale(.96)}
+  .copy:focus-visible{outline:3px solid var(--sun); outline-offset:2px}
+  .copy.done{color:#fff !important; background:var(--openid); border-color:var(--openid)}
+  .b-google .copy{color:var(--google)} .b-openid .copy{color:var(--openid)} .b-hyread .copy{color:var(--hyread)}
+
+  .btn-ghost{background:#fff; color:var(--ink); border:2.5px solid var(--ink); box-shadow:0 4px 0 var(--ink); margin-top:8px}
+  .btn-ghost:active{transform:translateY(3px); box-shadow:0 1px 0 var(--ink)}
+  .note{margin:16px 4px 0; font-size:15px; color:var(--ink-soft)}
+
+  .toast{position:fixed; left:50%; bottom:calc(24px + env(safe-area-inset-bottom)); transform:translate(-50%, 20px);
+    background:var(--ink); color:#fff; padding:12px 22px; border-radius:999px; font-size:18px;
+    opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; white-space:nowrap; z-index:10}
+  .toast.show{opacity:1; transform:translate(-50%, 0)}
+
+  footer{margin-top:36px; text-align:center; font-size:15px; color:var(--ink-soft)}
+  footer p{margin:0}
+  footer .teacher{margin-top:6px; font-size:17px; color:var(--ink)}
+
+  .reveal{animation:pop .35s ease-out both}
+  @keyframes pop{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){ .reveal,.spinner{animation:none} .toast{transition:none} }
+  @media (min-width:420px){ .hero .klass{font-size:52px} }
+  .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <svg class="hero-art" viewBox="0 0 360 200" role="img" aria-label="紅瓦屋頂的小房子和微笑的太陽">
+      <!-- 雲 -->
+      <g fill="#fff">
+        <path d="M34 62a14 14 0 0 1 26-8 12 12 0 0 1 20 6 10 10 0 0 1-2 20H40a12 12 0 0 1-6-18z"/>
+        <path d="M150 36a11 11 0 0 1 20-6 9 9 0 0 1 15 5 8 8 0 0 1-2 15h-29a9 9 0 0 1-4-14z" opacity=".9"/>
+      </g>
+      <!-- 太陽 -->
+      <g transform="translate(298 50)">
+        <g stroke="#FFB020" stroke-width="4" stroke-linecap="round">
+          <path d="M0-31v-8M0 31v8M-31 0h-8M31 0h8M-22-22l-6-6M22 22l6 6M-22 22l-6 6M22-22l6-6"/>
+        </g>
+        <circle r="22" fill="#FFC93C" stroke="#E89B0C" stroke-width="2.5"/>
+        <circle cx="-7" cy="-3" r="2.6" fill="#6B3426"/><circle cx="7" cy="-3" r="2.6" fill="#6B3426"/>
+        <circle cx="-12" cy="5" r="3.6" fill="#FF8A7A" opacity=".7"/><circle cx="12" cy="5" r="3.6" fill="#FF8A7A" opacity=".7"/>
+        <path d="M-5 5q5 5 10 0" fill="none" stroke="#6B3426" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      <!-- 草地 -->
+      <path d="M0 170Q90 158 180 166T360 164V200H0Z" fill="#9BD07A"/>
+      <path d="M0 182Q120 174 230 182T360 180V200H0Z" fill="#86C267"/>
+      <!-- 房子 -->
+      <g stroke="#6B3426" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="86" y="108" width="188" height="66" rx="4" fill="#FFF6E8"/>
+        <path d="M86 160h188" fill="none" stroke-width="2" opacity=".35"/>
+        <!-- 屋頂 -->
+        <clipPath id="roofClip"><path d="M70 112L94 74H266L290 112Z"/></clipPath>
+        <path d="M70 112L94 74H266L290 112Z" fill="#C8402F"/>
+        <g clip-path="url(#roofClip)" stroke="#9E2F23" stroke-width="2.2" opacity=".85">
+          <path d="M84 112L100 74M98 112L112 74M112 112L124 74M126 112L136 74M140 112L148 74M154 112L160 74M168 112L172 74M182 112L184 74M196 112L196 74M210 112L208 74M224 112L220 74M238 112L232 74M252 112L244 74M266 112L256 74M280 112L268 74"/>
+        </g>
+        <path d="M70 112L94 74H266L290 112Z" fill="none"/>
+        <!-- 屋脊 -->
+        <path d="M88 76Q86 64 96 66H264Q274 64 272 76Z" fill="#962E22"/>
+        <!-- 窗 -->
+        <rect x="104" y="124" width="38" height="30" rx="3" fill="#DCEFFA"/>
+        <rect x="218" y="124" width="38" height="30" rx="3" fill="#DCEFFA"/>
+        <path d="M113 124v30M123 124v30M133 124v30M227 124v30M237 124v30M247 124v30" stroke-width="2"/>
+        <!-- 門 -->
+        <rect x="163" y="132" width="34" height="42" rx="3" fill="#B5793F"/>
+        <path d="M180 132v42" stroke-width="2"/>
+        <!-- 門匾 101 -->
+        <rect x="160" y="113" width="40" height="15" rx="4" fill="#FFC93C"/>
+      </g>
+      <circle cx="175" cy="155" r="1.8" fill="#6B3426"/><circle cx="185" cy="155" r="1.8" fill="#6B3426"/>
+      <text x="180" y="125" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="11" fill="#6B3426">101</text>
+      <!-- 樹叢與小花 -->
+      <g stroke="#3F7D3A" stroke-width="2.5">
+        <circle cx="74" cy="168" r="13" fill="#6DBB5E"/><circle cx="62" cy="172" r="9" fill="#6DBB5E"/>
+        <circle cx="288" cy="168" r="13" fill="#6DBB5E"/><circle cx="300" cy="173" r="9" fill="#6DBB5E"/>
+      </g>
+      <g>
+        <circle cx="30" cy="184" r="4" fill="#FF8A7A"/><circle cx="30" cy="184" r="1.6" fill="#FFC93C"/>
+        <circle cx="330" cy="186" r="4" fill="#FFFFFF"/><circle cx="330" cy="186" r="1.6" fill="#FFC93C"/>
+        <circle cx="122" cy="188" r="3.5" fill="#FFC93C"/>
+        <circle cx="246" cy="190" r="3.5" fill="#FF8A7A"/>
+      </g>
+    </svg>
+    <h1><span class="school">紅瓦厝國小</span><span class="klass">一年一班</span></h1>
+    <span class="year">115 學年度</span>
+  </header>
+
+  <main>
+    <section class="pinned" aria-labelledby="acc-title">
+      <div class="pinned-head">
+        <span class="pin-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.5 2.5a1 1 0 0 1 1.4 0l5.6 5.6a1 1 0 0 1 0 1.4l-1.2 1.2a1 1 0 0 1-1.1.2l-2.6 2.6.6 4.1a1 1 0 0 1-.3.9l-1 1a1 1 0 0 1-1.4 0L10.8 16l-5.1 5.1a1 1 0 0 1-1.4-1.4L9.4 14.6 5.9 11.1a1 1 0 0 1 0-1.4l1-1a1 1 0 0 1 .9-.3l4.1.6 2.6-2.6a1 1 0 0 1 .2-1.1z"/></svg>
+          置頂
+        </span>
+        <h2 id="acc-title">學生各項帳密</h2>
+      </div>
+
+      <div class="pinned-body">
+        <p class="lead">選孩子的名字，再輸入孩子的身分證字號，就能看到 Google、OpenID、HyRead 的帳號和密碼。身分證字號只在這支手機上核對，不會上傳。</p>
+
+        <form id="form" novalidate autocomplete="off">
+          <div class="field">
+            <label for="student">孩子姓名</label>
+            <select id="student" class="control" required>
+              <option value="" disabled selected>請選擇孩子姓名</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pid">孩子的身分證字號</label>
+            <input id="pid" class="control" type="text" inputmode="text" maxlength="12"
+              autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false"
+              placeholder="例：D123456789" aria-describedby="pid-hint">
+            <span class="hint" id="pid-hint">1 個英文字母加 9 個數字，英文大小寫都可以</span>
+          </div>
+          <button class="btn btn-main" type="submit" id="go">
+            <span class="spinner" aria-hidden="true"></span><span id="go-text">查看帳密</span>
+          </button>
+          <p class="msg error" id="msg" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="result" id="result" hidden aria-live="polite" tabindex="-1">
+      <div class="who"><p>按「複製」，就能貼到登入畫面。</p></div>
+
+      <div class="block b-basic">
+        <div class="block-head"><span class="dot"></span>學生基本資料</div>
+        <div class="block-body basic-grid">
+          <div class="item full"><span class="k">姓名</span><span class="v name" data-f="name"></span></div>
+          <div class="item"><span class="k">座號</span><span class="v" data-f="seat"></span></div>
+          <div class="item"><span class="k">學號</span><span class="v" data-f="sid"></span></div>
+        </div>
+      </div>
+
+      <div class="block b-google">
+        <div class="block-head"><span class="dot"></span>Google 教育帳號</div>
+        <div class="block-body" data-group="g"></div>
+      </div>
+
+      <div class="block b-openid">
+        <div class="block-head"><span class="dot"></span>OpenID 帳號</div>
+        <div class="block-body" data-group="o"></div>
+      </div>
+
+      <div class="block b-hyread">
+        <div class="block-head"><span class="dot"></span>HyRead 帳號</div>
+        <div class="block-body" data-group="h"></div>
+      </div>
+
+      <button class="btn btn-ghost" type="button" id="reset">回首頁</button>
+      <p class="note">用別人的手機查看，看完請關閉頁面。</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>臺南市紅瓦厝國民小學　一年一班</p>
+    <p class="teacher">導師　蕭玉詩</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* 帳密資料：每位學生的資料都用「身分證字號」衍生的金鑰（PBKDF2-SHA256 + AES-256-GCM）加密。
+   頁面裡沒有任何身分證字號或明碼帳密；輸入正確的身分證字號才能在手機上解開。 */
+const VAULT = {"v":1,"iter":600000,"items":[{"s":1,"n":"楊競鋒","salt":"hiyKlmhi6/oRL9snKLsbiA==","iv":"ivT2cHpIc+JlXrwt","ct":"DTWGpdrnzDsXF/BJmtmGnFw0wdEnbNpC0SDw6k1MW6rfq4nMcQb+dOxiv7Q6cbm8YZz7DLMDg0oFUMpgu12YkyMfOTlQfnQtIzoXRVTfSffIzQ71AaRoVAgP++PvoRTvlb4dMyNJI3RYfGxCObvwYBI8I4gmRaO510kwyYXIlXqP4yB03vzRfV9IZNm8L1acoUhWb9g0v6ZxRRM2HB0="},{"s":2,"n":"鄭鈞元","salt":"CkAjH5CYdUsVLKPIK4VibA==","iv":"mD0ptrEiGk8ko3cr","ct":"dBGXW59q+61+OI3zDTaz9AxBUZ87X8GixNbqGEYDSiWjDQGMJBG/gsGhq37B5qchGlKyWuzvMwooGpvm1TsKE1YtrB2GbMAC7t8ONYURMiG7nmpkmA0Jd1Hx5yqwI8JBvuLwgFwnZkYzT3jchpik1cFRDjPJ8zvB41ZqxeUPgE6bFbfyLVQlztAYgITvJeNIGV7Afvy2IfRTQs+u79A="},{"s":3,"n":"王家鴻","salt":"pbKnvzN5wnZoiNG7XnT5eA==","iv":"WaQOReOcMwWYQI7Q","ct":"TrNuV5VicRXPPvIXcuDzxpqckEI9kNN9TqxsYdNyptkuWRD9ZwYHXqLioX5g3CJbXrBJMaqgBWpTncI0rwJCoo6PcgmevNOpAJy8bcAEfm4zahV93v+6CuDGC539AnyaarkNJH6H+nDMGBmbBQBH7hZilxVRimOJptCjf6Jzr94VKfedvZmUrEwOnFlCNwy5GIBWIwi6xlr8QwbSj6g="},{"s":4,"n":"宜皓暘","salt":"wniaAicvjCCWQgwOEJJOfg==","iv":"ScVHlM2Nvv+Ribo4","ct":"VWqwW9xLmvEIads9wnACQEaNnKc6LVqGfvO4PHOHBqYTE4slTTZyExO3OheDLYWjbTHBQ1I1q/niajvb6ZY9JWZQZEUVS8glUGVC4SioZ0wBIpaRiuq+tmRzgWbFUS1Vqnu5st8WadaV3wryKFR3oNIsX9ysJWuLcthkablahWJoLbIn/8f/RXeKIrev4uozan8iRaochCzNTtlrnTM="},{"s":5,"n":"潘宥銘","salt":"KbI5F64wkv7VKQvCTQL6EA==","iv":"Bw4cA0BoOIypVQXo","ct":"9FKPlrIsDqnoNMCFA6uebWwgjL59tE3wYH/8f0ReZDoBK1QUOtXrfubuRSMWwmyTbjCfVV9D+wKbjJPHO36qyBOFGHhs0bs8izSi2x7hhlFGZkeVfnjULXQXMjJjxerlowlK8zvLfCisnyzNSJVe9+fo7LysjkkZKwjStddSD+wuPstUeETG/GCFIFEsVGlCy+zNZ667NLKLMzJH0II="},{"s":6,"n":"王冠傑","salt":"cq0oB46hHJFP1LKSjUwhyg==","iv":"3VLNE056uImpKSqI","ct":"+EQ3eHZCeZWbFsvk7GGaMXQXmEXmxQCb7To/sFfiOqF8E/2Z7fnVq57B4QuGn0Sg8zDVthPSbwqXkrp+sl7ONFqvrZX2y/CoTMX/nK2wejCnZ5EgsGbsvEknOiK9fukx1yrbOnUrJP8wLbxcYx02z8ScUwweeHd3sY9RXLjH1jooEWr9t7Cxflt0IlmMHYJha5tm5qwVk2sPewjKJp8="},{"s":7,"n":"張若暘","salt":"aL71zpyrNoFm5Hz0wlFTiA==","iv":"vl0PzCSaDg+FLDxG","ct":"wzwmP4XvfWqIzVYbT6sIWChI2Dg27CEd+u2ziHtYKNrFgJIGflY7tM5nB2ajvzGNLFzUsFlE2+pTqfYvQZsrWqeQJdDkY9ZioAF0+ArcJVrNL1EZc8ramExDERs9DwdPubI6j83wsA9r9B7uMxkaMXdsuPrMGLdur3yv5fYsGWQ1nLWx6T0rgdl+x8VFfG22Xkx8Y5VAEd4TyslzVsQ="},{"s":8,"n":"裴德孝","salt":"TtyPn8wvmKyB8U+WQWRPJA==","iv":"mfDFJjnxmBZ/vO1B","ct":"gsuWFdWAfOXlkWxDfvFid9LFbyWXHSWVwd1cJElty9ODLiYYdqqq7FCKWkrmyg6CrC+y4aTvZVZduzwmc6FGtdsDp3FasKtPKLdzYqxu2SYdfFfhcwvWbjmgbKqPUcheIPVvtUFP6OFpL5jE/06lEH4KmsciG5rqhgjDaN8JDfbCwSrbCJFdZvW3VQr0Q66uy34qBMdUhYfuc5aM4xw="},{"s":9,"n":"莫袁鎧","salt":"X5VWHdtM9i+patq5IEwFlg==","iv":"aot7JxIRIgpuFd7n","ct":"Mh8HW04igNk/xXg8irNvUWgtAT+q3KC8G9f8hPIgQUsSu/UDfT3kv2tmGcfUaq/v1JP0oAW7vwCA+CdLE/uIQ2UwjWwIItPx0hbsnDm4YFc3BoNxH1P2iXEvF6FTgeYAJH2C5PEn1NAbvEEHrB51oscJP23XLNpJCTEsdQm4QUR3973WC+5gpXcD9bRRb4F9RlRV6K2h1NN6zTzEItU="},{"s":10,"n":"李羿霆","salt":"YNRnhJzXCJV8D2mjlipgyw==","iv":"7/y++jt8FgpfhBt0","ct":"NViWfmOPIsjKXJeHmve4Vwoi0vw+i4W/YBhjSB8OVJotjuQt9Bc2k00VBtvTvPkTLSW0iji1tHySM4/6ODAGnS9HDtLnYlbElTtvP3E8xPkGRS8gh2baYs8VDx3X3a1IpC4TcKmTbMYB14ispBzyXhXch3lGRswDtyG/msLqT7/YqjQ350m4dOWEyq1pXyBRS5Y5G6v/Y7vRo8uT9IxX"},{"s":11,"n":"蔡宇倫","salt":"CK+aPTvDABMwqcoeS78jVA==","iv":"r83qu0GNN8fqK1Td","ct":"cVIqkb/gPzud5u5Q/qORZ67Sr5AXW2io85avM+W54Mt3olNBNTF2B6Uj+bb2cB2b/SniKfnt3SlEX3NDmqwhU0DcnqlKxzePMf7Ammyr6AfzpfoOZA6XtEEzoobR3QN6FQHUkfWJzyI+uKJCsrMrQYfEhNs52E4+u+EuEpJvoClDfdZWQA3R0/d3Hp6oKpyTAYp3SjDW+y+RnZ6API8R"},{"s":12,"n":"彭萭心","salt":"3EAqfmWYQdA8SACDJDEtzg==","iv":"CzM9oTN+954CYg+M","ct":"BQJJ99iPI7MonsemMnM1GazHBH61MH2Y3zhUmRHfXhN5y+cWdXjLOFz9MVjgV33RZXlCIQsK9ovgNB/MoFhIHzm5ZHz9AfcBdsvdgDUrk+a3v3DZJ7mgDkuTAlbk8YrSMZkbO4PTSnwT+Drw9HTrulcqbMb4rKHE1jnrezhdOyJ4IeROl1wMXoO/AHNLDA0xnwQjriZ96u54O88oPjnU"},{"s":13,"n":"林婉諠","salt":"7Y8XoKVPbfKMsxLMQaNCyA==","iv":"5B/k743wv8Vuqn8t","ct":"y+gKiVF9yrWqPfoEuBdXkIsQwHucGU8Nu0KLc0IK44NLOb0kG/DH2VRydXUGH7KbTLJ7V2JHrEJiwHYPw5Ub0th2zb909FvYpj6PhEZaI0rJx5q36Wgb0m4n9y1/Whwf1ptuOzsg2i1T8AIWfJvfGsesv9RulPCyOxRC9yzrWzzM2M5TAJarwjXVvhbL+HaVZvI53k+cL2ZdqCx/AoM8"},{"s":14,"n":"劉謹涵","salt":"c1XdQ4adhSYtdnpPY3YS0Q==","iv":"lvH6NN3/qb94PLAc","ct":"0cZ7I8+nPb4vaD/jn6vG77ZJHanQAlCqDanBO5Qw1i9xxuBugy2pqX7oNOFmPU5Ze3d9ZvxhH/mfJCKx5fa41tsCqPuMb7yE5iAO5S/EpdHN6N71/Y2IlQOCpnqnlJfOKmvxyogXvhO/OrN58I7ZLhvuueTBBpyVP79poa/ewf+y0SaH8J1oAhs9lknWDJ5aBtK3AosU8fbsLrdBwXgc"},{"s":15,"n":"賴苡溱","salt":"tB9tS9nYivOFVR6OGpt4Hw==","iv":"qE8pL1oUUb2+UPuc","ct":"E1dNjL77kXFNkInVoaU6TGo15lvhBQcD14Nv2csM0savphiAh1db/bU/uF7UJs/3cjXT9+W6FxHRcBLOf8J93XXpxrKYxVzikeQPhqKuq7IJsvyVmLFvOtoU1uKowHqBVR419WoK6DPP92684YN7npUqaY6YmTWdBjxNtBnyMRQymoxhkaez4t2S/PatJ/DLl0imAVuEDP49+xGK28Dw"},{"s":16,"n":"侯柔妡","salt":"tzyqTaYOkJqjEbivp38x+A==","iv":"6rxesuH4Yslq0U+A","ct":"XJhflJ6dBPiF8pmIVm4pDpePNDBi0KYH7GkB7YEy1+wLQW7mUbF3W1Tce5aUQWoFsHusS/wswlpicZDnJmnB53rdeu4ORT5MZe0btoI6MU+4n1fgbXg2ycFiWrbM5TLNj0MU45CkFoKh3qXvNJ5+mqhCSTxIxwrCN3pptyOrG0L5qhbUSGfi6HUW4WGTKgbMbk5ZKk0/5u19bXe/ETOV"},{"s":17,"n":"郭柄宜","salt":"P9sTLXmjSUKzhgaXL93uQw==","iv":"Ul29Cn5eSxzjhWWz","ct":"J3pSBRec8/bh2jc2QRUTVT04Od8omOGm1Zc/2uacANKTiZuqSMeXQGTAEfS/K+X1C49xuotUCjKW3UFbfpaQRuXmuGzUwUtytJcDSnzdvT+zsJkgl58ePNXxxAtUHsiZfd4ZeFT19IZBVDHlHrLmfJERX+FhJNCEg3ZpaV2KpJtHTCEiSrSGVkBV7T286oRj7BJ+83aDSnQwhrtqjekk"},{"s":18,"n":"王瀞","salt":"7+oT4SeFYT9NCaAqW53LiQ==","iv":"yvbq2r1JOj4C/U+N","ct":"cRQ5KQ82FXIWNhThHjD/43fSCEQ5PNIgihz5COUFo9u3+ZL+XBJps/00f7x4baEqgE6uxhb9vZ8emMplX0L7zXjYHuriEK62Wbk+nnb7kVy0OLFHvICUX1Mih1GqbGQkZZXo74sM5OM5MLzjsnzp7GBMnaVXfmsLkkzFxNjIW0gsYL/9CgjQi7cGnSDej5/30GHV9aP5Q1rHXG7v"},{"s":19,"n":"陳宣妘","salt":"A6/AuJFUsrCZ8v7MqyjIqw==","iv":"8q/jFpOKcNshmTXV","ct":"mLY8oDey73nXTqNU3fZClO5kPkgWoafBFqUA76FOTevSQwL+pyFb75AN4YYGGNJah83/rHQjNta9bNVK8M8IHo1kV/BiY8R2MvlhWKLyfMiimQWBpttRZfZBNb+RPLDhufB1OI0t9eh2AZwFqzkNUWC18OLLoQZrLUulCZ8Fp7qcjUvrqbNl7fz+sobbLknaS9rFs5pewDZgK7I/pArn"},{"s":20,"n":"涂宛聿","salt":"cyECROE+ZZPb3E716XvQbA==","iv":"GQb8Jlz+wmBMal+B","ct":"d8QCzc5uRHjwDi7IZ7xBfqS/MiVxOPioHmRH7aKLdtzMyH50w9E4KDeEecc1ITLeRPvHFEPr1ZNYEbHk3Cv1XbtGOqRfEXGT7JqGb1XOpVB/ghe/3wt3a3bZUGBAVoxA1YnieudPeBVEH9k4xVZHylzY/twD9VvaU+VlRHNZiTQdxsj2QRXcdaGsmCaGmyJYfS/2Jm7Q3JlXlQ0Sdatu"},{"s":21,"n":"陳巧凡","salt":"E2iHEpKU2IoNmVIRCqswxA==","iv":"qHg1yUf3wySXO112","ct":"av2G9T3PTQ/ko1tWQ2qPPMswhSLpYuqSGlCGtB01Vj7dLvrymxjnpXJy1MDqVlKAEs7hiTnpngI7hYfMtivK5n01seDU+ZkD/IFRNJZGltvPVy5e6t2OMV4G/WUXXwpcmqM1Sxsg+8tpbxEUbHi12tJYC6Z9R57/5u3nPLuEUy25KZBHiHSVDbJfC2tzoxhXMYwxtSU+Wc5DMHEmb1Bi"},{"s":22,"n":"楊諠妮","salt":"SkzncflfvEoDEc18N/ww6A==","iv":"/sd2/K1CMBfyAiYB","ct":"MjpG8+8YA8LPRo0KF7S3Q5bxdL/o3y9zvnQK/btBVd9SEm9N5JyD7eDDuiiKf8JBCi9s8GGtbu3yKw5BCPe3U2IGMo02QZRnIz8ECj8OFBV2dmBw0ANMYKjqFyJQlOhv317htFiKCmh93zpyj7WzWOX5BR/1wEV3B43cAMPjd1WEdN3XWoeK1jQGehLe33139JyMS3lHnQ4G4N6oK/0j"},{"s":23,"n":"高苡庭","salt":"hwMWJJ2Nbu8to145zrGxXw==","iv":"xkFNiin6fUBOboAM","ct":"YoxKvzJhYWsrt9rMr7V8m0OqveVporw5Kd0TjU2uxjMY1+QCrDPRDUDl6VgH7yKsucsnwrIn+0y3g79DBqX6MwXUjTQXX2YXJ1K1ek7P50vJCpQXMLT+DreD++y6lSQK5C5rAIpJn7BThEiX5haxrCgDn4jVhrfytRL2oJ9/df5FfBp0ZU0VNYn5umlIhCTNYOirEUUlh1VIwFVAXkJA"},{"s":24,"n":"歐斯尹","salt":"h35J07JxE9cZK5SKt+2swA==","iv":"cfa/968VqgRZCT/v","ct":"TDfdUag/x1l6hXU3KsxZE9yChmNazcEPDOjQL1UM5vqWtl+RVmfKVSpCODnp+dJysa/jF7ujDRWNbdvtewhIwEHe1JsLg/ZDV7pGslRIRvJZVklxXnCR7E64OFB5GOAhP12Ea0FSXWWiJZWhDX6QCwe7PG/MdBji6Y5vSgZgavKa1QqyyB4H4qVrqzAN2HWqhzVcHk3ymCgw7U3eczHM"}]};
+
+(function(){
+  const $ = s => document.querySelector(s);
+  const sel = $('#student'), pid = $('#pid'), form = $('#form'), go = $('#go'), goText = $('#go-text');
+  const msg = $('#msg'), result = $('#result'), toast = $('#toast');
+  const enc = new TextEncoder(), dec = new TextDecoder();
+
+  VAULT.items.forEach((it, i) => {
+    const o = document.createElement('option');
+    o.value = String(i);
+    o.textContent = String(it.s).padStart(2, '0') + '  ' + it.n;
+    sel.appendChild(o);
+  });
+
+  const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+  const LETTERS = 'ABCDEFGHJKLMNPQRSTUVXYWZIO';
+  function validId(id){
+    if (!/^[A-Z][1289]\d{8}$/.test(id)) return false;
+    const n = LETTERS.indexOf(id[0]) + 10;
+    const d = [Math.floor(n/10), n%10].concat(id.slice(1).split('').map(Number));
+    const w = [1,9,8,7,6,5,4,3,2,1,1];
+    return d.reduce((s, x, i) => s + x*w[i], 0) % 10 === 0;
+  }
+
+  function showMsg(t){ msg.textContent = t; msg.classList.add('show'); }
+  function clearMsg(){ msg.textContent = ''; msg.classList.remove('show'); }
+  function setBusy(b){ go.disabled = b; goText.textContent = b ? '核對中…' : '查看帳密'; }
+
+  pid.addEventListener('input', clearMsg);
+  sel.addEventListener('change', () => { clearMsg(); hideResult(); });
+
+  async function unlock(item, id){
+    const base = await crypto.subtle.importKey('raw', enc.encode(id), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey(
+      {name:'PBKDF2', salt:b64(item.salt), iterations:VAULT.iter, hash:'SHA-256'},
+      base, {name:'AES-GCM', length:256}, false, ['decrypt']);
+    const pt = await crypto.subtle.decrypt({name:'AES-GCM', iv:b64(item.iv)}, key, b64(item.ct));
+    return JSON.parse(dec.decode(pt));
+  }
+
+  const ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/></svg>';
+  const ICON_OK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+
+  function credRow(label, value, what){
+    const row = document.createElement('div'); row.className = 'row';
+    const top = document.createElement('div'); top.className = 'row-top';
+    const k = document.createElement('span'); k.className = 'k'; k.textContent = label;
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'copy';
+    btn.innerHTML = ICON_COPY + '<span>複製</span>';
+    btn.setAttribute('aria-label', '複製' + what);
+    const v = document.createElement('div'); v.className = 'cred';
+    const at = value.indexOf('@');
+    if (at > 0) v.append(value.slice(0, at + 1), document.createElement('wbr'), value.slice(at + 1));
+    else v.textContent = value;
+    btn.addEventListener('click', async () => {
+      const ok = await copyText(value);
+      if (ok){
+        btn.classList.add('done'); btn.innerHTML = ICON_OK + '<span>已複製</span>';
+        showToast(what + '已複製');
+        clearTimeout(btn._t);
+        btn._t = setTimeout(() => { btn.classList.remove('done'); btn.innerHTML = ICON_COPY + '<span>複製</span>'; }, 1800);
+      } else {
+        const r = document.createRange(); r.selectNodeContents(v);
+        const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+        showToast('請長按文字手動複製');
+      }
+    });
+    top.append(k, btn); row.append(top, v);
+    return row;
+  }
+
+  async function copyText(t){
+    try { if (navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(t); return true; } } catch(e){}
+    const ta = document.createElement('textarea');
+    ta.value = t; ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px';
+    document.body.appendChild(ta); ta.focus(); ta.select(); ta.setSelectionRange(0, t.length);
+    let ok = false; try { ok = document.execCommand('copy'); } catch(e){}
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  let toastT;
+  function showToast(t){
+    toast.textContent = t; toast.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('show'), 1600);
+  }
+
+  function render(d){
+    result.querySelector('[data-f="name"]').textContent = d.n;
+    result.querySelector('[data-f="seat"]').textContent = d.s;
+    result.querySelector('[data-f="sid"]').textContent = d.id;
+    const groups = {g:'Google ', o:'OpenID ', h:'HyRead '};
+    Object.keys(groups).forEach(key => {
+      const box = result.querySelector('[data-group="' + key + '"]');
+      box.replaceChildren(
+        credRow('帳號', d[key][0], groups[key] + '帳號'),
+        credRow('密碼', d[key][1], groups[key] + '密碼'));
+    });
+    result.hidden = false;
+    result.classList.remove('reveal'); void result.offsetWidth; result.classList.add('reveal');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    result.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'start'});
+    result.focus({preventScroll:true});
+  }
+
+  function hideResult(){
+    result.hidden = true;
+    result.querySelectorAll('[data-f]').forEach(n => n.textContent = '');
+    result.querySelectorAll('[data-group]').forEach(n => n.replaceChildren());
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault(); clearMsg();
+    if (sel.value === ''){ showMsg('請先選擇孩子的姓名。'); sel.focus(); return; }
+    const id = pid.value.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
+    if (!/^[A-Z]\d{9}$/.test(id)){ showMsg('身分證字號是 1 個英文字母加 9 個數字，請再檢查一次。'); pid.focus(); return; }
+    if (!validId(id)){ showMsg('這組身分證字號好像有一個數字打錯了，請對照證件再輸入一次。'); pid.focus(); return; }
+    if (!window.crypto || !crypto.subtle){ showMsg('這個瀏覽器無法核對，請改用 Safari 或 Chrome 開啟本頁。'); return; }
+    const item = VAULT.items[Number(sel.value)];
+    setBusy(true);
+    try {
+      const d = await unlock(item, id);
+      pid.value = ''; pid.blur();
+      render(d);
+    } catch(err){
+      hideResult();
+      showMsg('身分證字號和「' + item.n + '」的資料對不起來，請確認選的是自己的孩子、號碼沒有打錯。');
+    } finally { setBusy(false); }
+  });
+
+  $('#reset').addEventListener('click', () => {
+    hideResult(); sel.selectedIndex = 0; pid.value = ''; clearMsg();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({top: 0, behavior: reduce ? 'auto' : 'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
